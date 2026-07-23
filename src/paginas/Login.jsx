@@ -1,9 +1,13 @@
 import { useState } from "react"
+import {useNavigate} from "react-router-dom"
 
 
 export default function App() {
   const [emailAtual, setEmailAtual] = useState()
   const [senhalAtual, setSenhaAtual] = useState()
+
+  const navigate = useNavigate()
+
 
   function loginDeFilme(evento) {
     const email = evento.target.value
@@ -24,8 +28,9 @@ export default function App() {
 
       alert("foiii")
 
-      window.location.href = "http://localhost:5173/net"
-
+      // window.location.href = "http://localhost:5173/net"
+      
+      navigate("/net")
     }
 
 
